@@ -3,7 +3,7 @@ import { ILoginBody } from '../models/api';
 import axios from 'axios';
 export async function login(body: ILoginBody) {
   try {
-    const res = await axios.post('http://localhost:3000/api/auth', body, {
+    const res = await axios.post(apiLoginURL, body, {
       headers: {
         'Content-Type': 'application/json',
       },
