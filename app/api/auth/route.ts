@@ -10,6 +10,6 @@ export async function POST(request: Request) {
       body: JSON.stringify(body),
     });
     console.log('API response:', await res.json());
-    NextResponse.json(res.json())
+    return NextResponse.json(res.json())
   }
   
