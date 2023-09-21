@@ -1,4 +1,5 @@
 // imports:
+import { carbeeAppointmentsURL } from '@/app/constants/api';
 import { parseCookieHeaders } from '@/app/utils/cookie';
 
 // Get appointments route function
@@ -13,7 +14,11 @@ try {
       return new Response('Unauthorized', { status: 401 });
     }
     // call to appointments api
-
+    const res = await fetch(`${carbeeAppointmentsURL}?size=10&before="0"`, {
+      method: 'GET',
+      headers: {'Authorization': `Bearer ${token}`},
+    });
+    console.log(res)
     return new Response('Correct!');
 } catch(error) {
   return new Response('Internal Server Error', { status: 500 });
