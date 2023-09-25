@@ -33,8 +33,8 @@ export default function Dashboard() {
         <div className={styles.loading}>
           <div className={styles.loader}>
             {' '}
-            <span>Loading...</span>
           </div>
+          <span>Loading...</span>
         </div>
       </div>
     );
