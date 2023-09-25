@@ -29,10 +29,16 @@
     "yarn": "please-use-pnpm"
   },
   "devDependencies": {
+    "@aws-amplify/ui-react": "^5.3.1",
     "@commitlint/cli": "^17.7.1",
     "@commitlint/config-conventional": "^17.7.0",
     "@types/cookie": "^0.5.2",
+    "antd": "^5.9.3",
+    "aws-amplify": "^5.3.11",
+    "aws-crt": "^1.18.0",
+    "encoding": "^0.1.13",
     "husky": "^8.0.3",
-    "prettier": "^3.0.3"
+    "prettier": "^3.0.3",
+    "react-query": "^3.39.3"
   }
 }

@@ -1,0 +1,59 @@
+.home {
+    max-width: 100vw;
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 12% 2% 86%;
+}
+
+.dashboard {
+    width: 100%;
+    height: 100%;
+    grid-column: 3 / 4;
+    display: grid;
+    grid-template-rows: 2% 8% 6% 84%;
+    grid-template-columns: 98% 2%;
+}
+
+.header {
+    grid-row: 2 / 3;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1vh 2vw;
+    color: #fff;
+    border-radius: 10px;
+    font-size: .8rem;
+    background-color: var(--brand-secondary-600);
+}
+
+.title {
+    height: fit-content;
+    grid-row: 2 / 3;
+
+}
+
+.appointments {
+    width: 100%;
+    height: 100%;
+    grid-row: 4 / 5;
+    display: flex;
+    gap: 1vw;
+}
+
+.book {
+    width: fit-content;
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+    font-weight: 700;
+    font-size: .9rem;
+    background-color: var(--brand-primary);
+    color: #fff;
+    padding: 2vh 1vw;
+    border-radius: 10px;
+}
+
+.book:hover {
+    cursor: pointer;
+    background-color: var(--button-hover);
+}

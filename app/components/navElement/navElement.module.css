@@ -1,0 +1,21 @@
+.element {
+    width: fit-content;
+    height: fit-content;
+    justify-self: center;
+    display: flex;
+    gap: .5vw;
+    align-items: center;
+    background-color: #fff;
+    padding: .3vh .7vw;
+    border-radius: 10px;
+    font-weight: 600;
+}
+
+.element > img {
+    width: clamp(20px, 2vw, 40px);
+}
+
+.element:hover {
+    cursor: pointer;
+    opacity: .9;
+}

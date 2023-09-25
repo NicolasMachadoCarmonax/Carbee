@@ -1,22 +1,19 @@
 // use client declaration to act from browser
-'use client';
-
+import SignIn from '@/app/components/signIn/signIn';
 // imports:
-import { useLayoutEffect, useState } from 'react';
-
+import styles from './login.module.css';
+import Image from 'next/image';
+import assets from '@/app/assets/assets';
 // Login page
 export default function Login() {
-  const [credentials, setCredentials] = useState({username: "candidate@curbee.com", password: "password"})
-  // Call login server route function
-  useLayoutEffect(()=>{
-    fetch('http://localhost:3000/api/auth', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(credentials),
-  }).then((res) => {});
-  },[])
   // Retrun login JSX
-  return <></>;
+  return (
+    <div className={styles.login}>
+      <div className={styles.loginLeft}>
+        <Image src={assets.carbee} alt="" width={300} height={100} />
+        <SignIn />
+      </div>
+      <div className={styles.login_background}></div>
+    </div>
+  );
 }

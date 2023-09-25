@@ -7,16 +7,13 @@ export async function GET(request: Request) {
     const cookieHeader = request.headers.get('Cookie') || '';
     // parse cookie headers with util function
     const token = parseCookieHeaders(cookieHeader, 'token');
-    // return 401 if token empty
-    if (!token) {
-      return new Response('Unauthorized', { status: 401 });
-    }
+    console.log(token)
     // call to availability api
-    const res = await fetch(`${carbeeAvailabilityURL}/2023-10-23`, {method: 'GET', headers: {
+    const res = await fetch(`${carbeeAvailabilityURL}/2023-11-23`, {method: 'GET', headers: {
         'Authorization': `Bearer ${token}`
     }})
     console.log(res)
-    return new Response('Server response');
+    return new Response('');
   } catch (error) {
     return new Response('Internal Server Error', { status: 500 });
   }
