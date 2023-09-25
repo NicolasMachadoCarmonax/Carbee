@@ -1,17 +1,38 @@
 // imports: api url from constants, login model and cookie parser
-import { carbeeLoginURL } from '@/app/constants/api';
+import { awsRegion, awsPoolId, awsClientId } from '@/app/constants/api';
 import { ILoginBody } from '@/app/models/api';
 import { createTokenCookie } from '@/app/utils/cookie';
 import { Auth, Amplify } from 'aws-amplify';
+
+// Validate user token route function
+export async function GET(request: Request) {
+  Amplify.configure({
+    Auth: {
+      region: awsRegion,
+      userPoolId: awsPoolId,
+      userPoolWebClientId: awsClientId,
+    },
+  });
+  try {
+    // call to login api
+    await Auth.currentAuthenticatedUser();
+    return new Response('Authorized', { status: 200 });
+  } catch (error:any) {
+    if (error === 'The user is not authenticated') {
+      return new Response('The user is not authenticated', { status: 401 });
+    }
+    return new Response('Internal server error', { status: 500 });
+  }
+}
 
 // Login route function
 export async function POST(request: Request) {
   try {
     Amplify.configure({
       Auth: {
-        region: 'us-east-1',
-        userPoolId: 'us-east-1_WCdHgTTkr',
-        userPoolWebClientId: '496a838e5c58ecdg5sulfh6ulf',
+        region: awsRegion,
+        userPoolId: awsPoolId,
+        userPoolWebClientId: awsClientId,
       },
     });
     // parse body from request

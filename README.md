@@ -1,17 +1,18 @@
-## Getting Started
+## Welcome to the Carbee frontend codebase
 
-Node version required: 18.7.1 (as declared in the .nvmrc)
+Enviorment: Node - 18.7.1 (as declared in the .nvmrc)
+Engine: PNPM - 18.7.1 (as declared in the .nvmrc)
 
-First, run the development server:
+Codebase instructions:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun run dev
+Run PNPM install
+``` bash
+pnpm install
+```
+
+Run development 
+``` bash
+pnpm run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.

@@ -3,7 +3,7 @@
     width: 100vw;
     height: 100vh;
     display: grid;
-    grid-template-columns: 12% 2% 86%;
+    grid-template-columns: 8% 2% 90%;
 }
 
 .dashboard {
@@ -11,41 +11,18 @@
     height: 100%;
     grid-column: 3 / 4;
     display: grid;
-    grid-template-rows: 2% 8% 6% 84%;
+    grid-template-rows: 4% 8% 6% 82%;
     grid-template-columns: 98% 2%;
-}
-
-.header {
-    grid-row: 2 / 3;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1vh 2vw;
-    color: #fff;
-    border-radius: 10px;
-    font-size: .8rem;
-    background-color: var(--brand-secondary-600);
-}
-
-.title {
-    height: fit-content;
-    grid-row: 2 / 3;
-
-}
-
-.appointments {
-    width: 100%;
-    height: 100%;
-    grid-row: 4 / 5;
-    display: flex;
-    gap: 1vw;
 }
 
 .book {
     width: fit-content;
-    grid-column: 2 / 3;
+    height: fit-content;
+    grid-column: 1 / 2;
     grid-row: 2 / 3;
-    font-weight: 700;
+    display: flex;
+    align-items: center;
+    font-weight: 500;
     font-size: .9rem;
     background-color: var(--brand-primary);
     color: #fff;
@@ -56,4 +33,12 @@
 .book:hover {
     cursor: pointer;
     background-color: var(--button-hover);
+}
+
+.appointments {
+    width: 100%;
+    height: 100%;
+    grid-row: 4 / 5;
+    display: flex;
+    gap: 1vw;
 }
