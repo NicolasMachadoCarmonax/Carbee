@@ -1,9 +1,10 @@
 'use client';
+import { Appointment } from '@/app/components/appointment/appointment';
 import styles from './dashboard.module.css';
 import Nav from '@/app/components/nav/nav';
 import { authRoute } from '@/app/utils/authRoute';
 import { useRouter } from 'next/navigation';
-import { useEffect, useLayoutEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 export default function Dashboard() {
   const router = useRouter();
@@ -33,21 +34,8 @@ export default function Dashboard() {
         <div className={styles.loading}>
           <div className={styles.loader}>
             {' '}
-            <span>Loading...</span>
           </div>
-        </div>
-      </div>
-    );
-  }
-
-  if (authStatus === 200) {
-    return (
-      <div className={styles.home}>
-        <Nav />
-        <div className={styles.dashboard}>
-          <div onClick={goToBook} className={styles.book}>
-            <span>Book appointment</span>
-          </div>
+          <span>Loading...</span>
         </div>
       </div>
     );
@@ -61,5 +49,21 @@ export default function Dashboard() {
   if (authStatus === 401) {
     alert('Authentication is required');
     goToLogin();
+  }
+
+  if (authStatus === 200) {
+    return (
+      <div className={styles.home}>
+        <Nav />
+        <div className={styles.dashboard}>
+          <div onClick={goToBook} className={styles.book}>
+            <span>Book appointment</span>
+          </div>
+          <div className={styles.appointments}>
+            <Appointment/>
+          </div>
+        </div>
+      </div>
+    );
   }
 }
