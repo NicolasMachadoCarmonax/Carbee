@@ -26,8 +26,21 @@ export default function Dashboard() {
   useEffect(() => {
     auth();
   }, []);
-  
-  if(authStatus === 200) {
+
+  if (!authStatus) {
+    return (
+      <div className={styles.home}>
+        <div className={styles.loading}>
+          <div className={styles.loader}>
+            {' '}
+            <span>Loading...</span>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  if (authStatus === 200) {
     return (
       <div className={styles.home}>
         <Nav />
@@ -40,9 +53,13 @@ export default function Dashboard() {
     );
   }
 
-  if(authStatus === 401){
-    alert('Authentication is required')
-    goToLogin()
+  if (authStatus == 500) {
+    alert('There was an error with our services, please try again later.');
+    goToLogin();
   }
 
+  if (authStatus === 401) {
+    alert('Authentication is required');
+    goToLogin();
+  }
 }

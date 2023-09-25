@@ -9,6 +9,7 @@ import assets from '@/app/assets/assets';
 import Image from 'next/image';
 // sign in modal
 export default function SignIn() {
+
   // router
   const router = useRouter();
 
@@ -24,7 +25,7 @@ export default function SignIn() {
   // action function calling internal api
   function login(event: ILoginEvent) {
     setIsLoading(true);
-    fetch('http://localhost:3000/api/auth', {
+    fetch('/api/auth', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -38,6 +39,10 @@ export default function SignIn() {
         }
         if (res.status === 401) {
           alert('Incorrect username or password');
+        }
+
+        if(res.status === 500) {
+          alert('There was an error with our services, please try again later.');
         }
       })
       .catch((err) => {

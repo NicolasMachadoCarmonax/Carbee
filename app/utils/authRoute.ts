@@ -1,8 +1,10 @@
+import { authURL } from "../constants/api";
+
 export async function authRoute() {
   try {
-    const res = await fetch('http://localhost:3000/api/auth', { method: 'GET' });
+    const res = await fetch(authURL, { method: 'GET' });
     return res.status
   } catch(error) {
-    return error
+    return 500
   }
 }

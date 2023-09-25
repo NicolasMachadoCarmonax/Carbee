@@ -15,4 +15,4 @@ Run development
 pnpm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open https://carbee-eiyxhs52s-nicolasmachadocarmonax.vercel.app/ with your browser to see the deployed version.

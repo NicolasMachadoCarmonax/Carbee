@@ -5,11 +5,12 @@ import assets from '@/app/assets/assets';
 import { NavElement } from '../navElement/navElement';
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
+import { logoutURL } from '@/app/constants/api';
 
 export default function Nav() {
   const router = useRouter();
   async function logout() {
-   const res = await fetch('http://localhost:3000/api/logout')
+   const res = await fetch(logoutURL)
    console.log('server response: ', res)
     router.replace('/login');
   }

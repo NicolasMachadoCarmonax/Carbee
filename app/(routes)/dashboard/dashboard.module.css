@@ -1,44 +1,77 @@
 .home {
-    max-width: 100vw;
-    width: 100vw;
-    height: 100vh;
-    display: grid;
-    grid-template-columns: 8% 2% 90%;
+  max-width: 100vw;
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 8% 2% 90%;
+  background-color: var(--brand-tertiary);
 }
 
 .dashboard {
-    width: 100%;
-    height: 100%;
-    grid-column: 3 / 4;
-    display: grid;
-    grid-template-rows: 4% 8% 6% 82%;
-    grid-template-columns: 98% 2%;
+  width: 100%;
+  height: 100%;
+  grid-column: 3 / 4;
+  display: grid;
+  grid-template-rows: 4% 8% 6% 82%;
+  grid-template-columns: 98% 2%;
 }
 
 .book {
-    width: fit-content;
-    height: fit-content;
-    grid-column: 1 / 2;
-    grid-row: 2 / 3;
-    display: flex;
-    align-items: center;
-    font-weight: 500;
-    font-size: .9rem;
-    background-color: var(--brand-primary);
-    color: #fff;
-    padding: 2vh 1vw;
-    border-radius: 10px;
+  width: fit-content;
+  height: fit-content;
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+  font-size: 0.9rem;
+  background-color: var(--brand-primary);
+  color: #fff;
+  padding: 2vh 1vw;
+  border-radius: 10px;
 }
 
 .book:hover {
-    cursor: pointer;
-    background-color: var(--button-hover);
+  cursor: pointer;
+  background-color: var(--button-hover);
 }
 
 .appointments {
-    width: 100%;
-    height: 100%;
-    grid-row: 4 / 5;
-    display: flex;
-    gap: 1vw;
+  width: 100%;
+  height: 100%;
+  grid-row: 4 / 5;
+  display: flex;
+  gap: 1vw;
+}
+
+.loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  left: 45vw;
+  grid-column: 1 / 3;
+  align-self: center;
+  justify-self: center;
+}
+
+.loader {
+  border: 4px solid #d0b299;
+  border-radius: 50%;
+  border-top: 4px solid #7e6f63;
+  width: 30px;
+  height: 30px;
+  animation: spin 1s linear infinite;
+  position: relative;
+  right: .5vw;
+  bottom: 1vw;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
