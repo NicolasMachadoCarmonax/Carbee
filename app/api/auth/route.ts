@@ -1,6 +1,7 @@
 // imports: api url from constants, login model and cookie parser
 import { awsRegion, awsPoolId, awsClientId } from '@/app/constants/api';
 import { ILoginBody } from '@/app/models/api';
+import { createTokenCookie } from '@/app/utils/cookie';
 import { Auth, Amplify } from 'aws-amplify';
 
 // Validate user token route function
@@ -37,9 +38,9 @@ export async function POST(request: Request) {
     // parse body from request
     const body: ILoginBody = await request.json();
     // call to login api
-    await Auth.signIn(body.username, body.password);
+    // const user = await Auth.signIn(body.username, body.password);
     // const token = user.signInUserSession.idToken.jwtToken;
-    // // get data and create cookie
+    // get data and create cookie
     // const cookie = createTokenCookie(token);
     // return successfull response with cookie
     return new Response('Authorized', {
