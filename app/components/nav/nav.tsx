@@ -1,4 +1,4 @@
-"use client"
+'use client';
 
 import styles from './nav.module.css';
 import assets from '@/app/assets/assets';
@@ -10,8 +10,8 @@ import { logoutURL } from '@/app/constants/api';
 export default function Nav() {
   const router = useRouter();
   async function logout() {
-   await fetch(logoutURL)
-    // router.replace('/login');
+    await fetch(logoutURL, { method: 'GET' });
+    router.replace('/login');
   }
   return (
     <div className={styles.nav}>
