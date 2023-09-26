@@ -11,7 +11,7 @@ export default function Nav() {
   const router = useRouter();
   async function logout() {
    await fetch(logoutURL)
-    router.replace('/login');
+    // router.replace('/login');
   }
   return (
     <div className={styles.nav}>
