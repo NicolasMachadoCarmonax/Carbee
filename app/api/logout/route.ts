@@ -2,7 +2,7 @@ import { Auth } from 'aws-amplify';
 
 export async function GET(request: Request) {
   try {
-    await Auth.signOut({ global: true });
+    await Auth.signOut();
     return new Response('Logged Out', {
       status: 200,
     });
