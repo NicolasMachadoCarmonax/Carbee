@@ -10,8 +10,10 @@ import { logoutURL } from '@/app/constants/api';
 export default function Nav() {
   const router = useRouter();
   async function logout() {
-    await fetch(logoutURL, { method: 'GET' });
-    router.replace('/login');
+    const res = await fetch(logoutURL, { method: 'GET' });
+    if (res.status === 200) {
+      router.replace('/login');
+    }
   }
   return (
     <div className={styles.nav}>
