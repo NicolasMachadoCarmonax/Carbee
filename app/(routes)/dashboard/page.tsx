@@ -16,7 +16,7 @@ export default function Dashboard() {
   }
 
   function goToBook() {
-    router.replace('/dashboard/book');
+    router.replace('/book');
   }
 
   async function auth() {
