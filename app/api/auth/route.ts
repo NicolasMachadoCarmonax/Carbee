@@ -17,7 +17,7 @@ export async function GET(request: Request) {
     // call to login api
     await Auth.currentAuthenticatedUser();
     return new Response('Authorized', { status: 200 });
-  } catch (error:any) {
+  } catch (error: any) {
     if (error === 'The user is not authenticated') {
       return new Response('The user is not authenticated', { status: 401 });
     }
@@ -38,14 +38,14 @@ export async function POST(request: Request) {
     // parse body from request
     const body: ILoginBody = await request.json();
     // call to login api
-    const user = await Auth.signIn(body.username, body.password);
-    const token = user.signInUserSession.idToken.jwtToken;
-    // get data and create cookie
-    const cookie = createTokenCookie(token);
+    await Auth.signIn(body.username, body.password);
+    // const token = user.signInUserSession.idToken.jwtToken;
+    // // get data and create cookie
+    // const cookie = createTokenCookie(token);
     // return successfull response with cookie
     return new Response('Authorized', {
       status: 200,
-      headers: { 'Set-Cookie': cookie },
+      // headers: { 'Set-Cookie': cookie },
     });
   } catch (error: any) {
     if (error.message === 'Incorrect username or password.') {
