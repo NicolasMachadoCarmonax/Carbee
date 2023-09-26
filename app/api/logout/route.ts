@@ -5,7 +5,7 @@ export async function GET(request: Request) {
   try {
     await Auth.signOut()
     const cookie = createTokenCookie('');
-    return new Response('Authorized', {
+    return new Response('Logged Out', {
       status: 200,
       headers: { 'Set-Cookie': cookie },
     });
