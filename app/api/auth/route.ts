@@ -1,7 +1,6 @@
 // imports: api url from constants, login model and cookie parser
 import { awsRegion, awsPoolId, awsClientId } from '@/app/constants/api';
 import { ILoginBody } from '@/app/models/api';
-import { createTokenCookie } from '@/app/utils/cookie';
 import { Auth, Amplify } from 'aws-amplify';
 
 // Validate user token route function
